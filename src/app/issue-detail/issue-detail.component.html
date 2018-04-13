@@ -1,0 +1,14 @@
+<div class="site-content" *ngIf="filterReady | async">
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title">{{ issueDetail?.title  }}</h1>
+      <div class="entry-meta">
+        <span class="state" [class.open]="issueDetail?.state == 'open'">{{ issueDetail?.state }}</span>
+        <span class="author">Opened by <em>{{ issueDetail?.user?.login }}</em> on {{ issueDetail?.created_at | date:mediumDate }}</span>
+        <span class="comments far fa-comment-alt">{{ issueDetail?.comments }}</span>
+      </div>
+    </div>
+    <div class="page-content" [innerHTML]="issueDetail?.body | MarkdownToHtml">
+    </div>
+  </div>
+</div>

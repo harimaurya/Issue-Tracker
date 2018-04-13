@@ -1,0 +1,37 @@
+<div class="site-content">
+  <div class="container">
+    
+      <div class="issue-header">
+        <span>List of Issues</span>
+      </div>
+      <div class="issue-list">
+
+        <div class="issue-item" *ngFor="let item of issues">
+          <div class="issue-detail">
+            <div class="issue-title">
+               <a [routerLink]="['/issue',item.number]" >{{ item.title }}</a>
+            </div>
+            <div class="issue-label">
+              <span *ngFor="let labelItem of item.labels" 
+                  [style.backgroundColor]="'#' + labelItem.color"
+                  [style.color]="(labelItem.color == '000000' || labelItem.color == '5319e7') ? '#ffffff': '#000000'"
+                  > {{ labelItem.name }}</span>
+            </div>
+            <div class="issue-credit">
+              #{{ item.number }} opened on {{ item.created_at | date:mediumDate }} by {{ item.user.login }}
+            </div>
+          </div>
+          <div class="issue-comment">
+            <span class="far fa-comment-alt">{{ item.comments }}</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pagination">
+        <a class="prev" [routerLink]="['/page', prevPage]" [attr.disabled]="prevPage ? '' : 'disabled'">Previous</a>
+        <a class="next" [routerLink]="['/page', nextPage]">Next</a>
+      </div>
+
+  </div>
+</div>

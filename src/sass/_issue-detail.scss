@@ -1,0 +1,57 @@
+.page-title {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+.entry-meta {
+  font-size: 14px;
+  color: #000;
+
+  span{
+      margin-right: 4px;
+
+      &:last-child{
+          margin-right: 0px;
+      }
+  }
+
+  .comments:before{
+      margin-right: 4px;
+  }
+
+
+  .state {
+    display: block;
+    width: 50px;
+    background-color: #000;
+    text-align: center;
+    padding: 3px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    text-transform: lowercase;
+    margin-bottom: 8px;
+    &.open {
+      background-color: #2cbe4e;
+    }
+  }
+  
+  a{
+      color: inherit;
+      text-decoration: none;
+  }
+
+}
+
+
+.page-content {
+  margin: 20px 0;
+  padding: 12px;
+  background-color: #fff;
+
+  p{
+      margin-top: 0px;
+  }
+}
+
+
